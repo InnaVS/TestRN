@@ -12,7 +12,7 @@ export default class MySecondScreen extends Component {
     drawerLabel: 'Second',
     drawerIcon: ({ tintColor }) => (
       <Image
-        source={require('https://www.google.com.ua/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjFsPiu2evYAhXCZFAKHdYUCAkQjRwIBw&url=http%3A%2F%2Fbipbap.ru%2Fcategory%2Fkrasivye-kartinki&psig=AOvVaw1366rTdMaygtQeCwQQbPP2&ust=1516714880174299')}
+        source={require('/images/12.png')}
         style={[styles.icon, {tintColor: tintColor}]}
       />
     ),
