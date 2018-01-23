@@ -10,3 +10,5 @@ const MainComponent = () => {
     </View>
   );
 };
+
+export default MainComponent;

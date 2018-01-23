@@ -2,7 +2,7 @@ import {AsyncStorage} from 'react-native';
 import {compose, createStore, applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import {createLogger} from 'redux-logger';
-import {persistStore} from 'redux-persist';
+import {persistStore, autoRehydrate} from 'redux-persist';
 
 import reducers from './reducers';
 
@@ -14,12 +14,14 @@ const middleware = [
 const appStore = createStore(
   reducers,
   undefined,
-  compose(applyMiddleware(...middleware)),
+  compose(applyMiddleware(...middleware), autoRehydrate()),
 );
 
 const persistor = persistStore(appStore, {
   storage: AsyncStorage,
-  null,
+  whitelist: []
 }, () => {appStore.dispatch()});
+
+
 
 export default appStore;
