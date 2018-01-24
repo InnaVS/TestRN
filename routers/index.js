@@ -1,5 +1,5 @@
 import React from 'react';
-import {StackNavigator, TabNavigator} from 'react-navigation';
+import {StackNavigator, TabNavigator, DrawerNavigator} from 'react-navigation';
 import {Text} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -14,21 +14,11 @@ export const AppNavigator = StackNavigator({
           screen: MyHomeScreen,
           navigationOptions: () => ({
             showIcon: true,
-            headerTitle: (
-              <Text style={{fontSize: 18, fontWeight: '500'}}>
-                {`Home`}
-              </Text>
-            ),
             tabBarIcon: (
               <Icon
                 name='glass'
                 size={20}
               />
-            ),
-            tabBarLabel: (
-              <Text>
-                Home
-              </Text>
             )
           })
         },
@@ -55,7 +45,23 @@ export const AppNavigator = StackNavigator({
         }
       }, {
         tabBarPosition: 'bottom',
-        showIcon: true
+        swipeEnabled: false,
+        tabBarOptions: {
+          showIcon: true,
+          showLabel: false
+          // scrollEnabled: true
+        },
+      })
+  },
+  SubRoot: {
+    screen: DrawerNavigator(
+      {
+        HomeScreen: {
+          screen: MyHomeScreen
+        },
+        SecondScreen: {
+          screen: MySecondScreen
+        }
       })
   }
 });
