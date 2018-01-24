@@ -10,7 +10,7 @@ export default class MySecondScreen extends Component {
     return (
       <View style={styles.container}>
         <Text>
-          Инна
+          1
         </Text>
       </View>
     )

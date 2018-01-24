@@ -10,7 +10,7 @@ export default class MySecondScreen extends Component {
     return (
       <View style={styles.container}>
         <Text>
-          Соколенко
+          2
         </Text>
       </View>
     )
@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#2c4977',
+    backgroundColor: '#5b192e',
   }
 });

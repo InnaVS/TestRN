@@ -1,11 +1,11 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 
 import {AppNavigator} from '../routers';
 
 const MainComponent = () => {
   return (
-    <View>
+    <View style={{flex: 1}}>
       <AppNavigator />
     </View>
   );
