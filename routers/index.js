@@ -1,10 +1,11 @@
 import React from 'react';
 import {StackNavigator, TabNavigator, DrawerNavigator} from 'react-navigation';
-import {Text} from 'react-native';
+import {Text, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import MyHomeScreen from '../components/MyHomeScreen';
 import MySecondScreen from '../components/MySecondScreen';
+import ThirdComponentScreen from '../components/ThirdComponentForNav';
 
 export const AppNavigator = StackNavigator({
   Root: {
@@ -49,7 +50,6 @@ export const AppNavigator = StackNavigator({
         tabBarOptions: {
           showIcon: true,
           showLabel: false
-          // scrollEnabled: true
         },
       })
   },
@@ -59,8 +59,17 @@ export const AppNavigator = StackNavigator({
         HomeScreen: {
           screen: MyHomeScreen
         },
-        SecondScreen: {
-          screen: MySecondScreen
+        ThirdComponentScreen: {
+          screen: ThirdComponentScreen,
+          navigationOptions: () => ({
+            drawerLabel: 'Third',
+            drawerIcon: () => (
+              <Image
+                source={'http://mirpozitiva.ru/uploads/posts/2016-08/1472058016_02.jpg'}
+                style={{width: 30, height: 30}}
+              />
+            ),
+          })
         }
       })
   }
