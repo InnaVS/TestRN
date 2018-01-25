@@ -4,12 +4,12 @@ import {
   ScrollView,
   StyleSheet,
   Image,
-  Button,
+  TouchableOpacity,
   View
 } from 'react-native';
 
 export default class MySecondScreen extends Component {
-  render () {
+  render() {
     return (
       <ScrollView style={styles.container}>
         <View style={styles.subContainer}>
@@ -20,81 +20,16 @@ export default class MySecondScreen extends Component {
             style={{width: 250, height: 250, marginBottom: 30}}
             source={{uri: 'https://patpgmr.files.wordpress.com/2016/04/night-sky-stars-milky-way-photography-36__880.jpg?w=834'}}
           />
+          <TouchableOpacity
+            style={styles.but}
+            onPress={() => {
+              console.log('go to ThirdComponentScreen');
+              this.props.navigation.navigate('ThirdComponentScreen')
+            }}
+          >
+            <Text>Press me</Text>
+          </TouchableOpacity>
         </View>
-
-
-        <Button
-          title="Press me"
-          style={styles.but}
-          onPress={() => {
-            console.log('go to ThirdComponentScreen');
-            this.props.navigation.navigate('ThirdComponentScreen')
-          }}
-        />
-        <Button
-          title="Press me"
-          style={styles.but}
-          onPress={() => {
-            console.log('go to ThirdComponentScreen');
-            this.props.navigation.navigate('ThirdComponentScreen')
-          }}
-        />
-        <Button
-          title="Press me"
-          style={styles.but}
-          onPress={() => {
-            console.log('go to ThirdComponentScreen');
-            this.props.navigation.navigate('ThirdComponentScreen')
-          }}
-        />
-        <Button
-          title="Press me"
-          style={styles.but}
-          onPress={() => {
-            console.log('go to ThirdComponentScreen');
-            this.props.navigation.navigate('ThirdComponentScreen')
-          }}
-        />
-        <Button
-          title="Press me"
-          style={styles.but}
-          onPress={() => {
-            console.log('go to ThirdComponentScreen');
-            this.props.navigation.navigate('ThirdComponentScreen')
-          }}
-        />
-        <Button
-          title="Press me"
-          style={styles.but}
-          onPress={() => {
-            console.log('go to ThirdComponentScreen');
-            this.props.navigation.navigate('ThirdComponentScreen')
-          }}
-        />
-        <Button
-          title="Press me"
-          style={styles.but}
-          onPress={() => {
-            console.log('go to ThirdComponentScreen');
-            this.props.navigation.navigate('ThirdComponentScreen')
-          }}
-        />
-        <Button
-          title="Press me"
-          style={styles.but}
-          onPress={() => {
-            console.log('go to ThirdComponentScreen');
-            this.props.navigation.navigate('ThirdComponentScreen')
-          }}
-        />
-        <Button
-          title="Press me"
-          style={styles.but}
-          onPress={() => {
-            console.log('go to ThirdComponentScreen');
-            this.props.navigation.navigate('ThirdComponentScreen')
-          }}
-        />
       </ScrollView>
     )
   }
@@ -111,16 +46,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'green',
   },
   text: {
     fontFamily: "Salomeya",
     fontSize: 20,
-    fontWeight: "800"
+    fontWeight: '300'
   },
   but: {
     marginTop: 20,
-    padding: 30,
-    backgroundColor: '#745E77'
+    padding: 10,
+    fontSize: 11,
+    // backgroundColor: '#0d7774',
+    // color: '#062D2D',
+    color: 'red',
+    fontWeight: '900',
+    borderColor: '#0d7774',
+    borderWidth: 4
   }
 });
