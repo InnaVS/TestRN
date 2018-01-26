@@ -23,11 +23,12 @@ export default class MySecondScreen extends Component {
           <TouchableOpacity
             style={styles.but}
             onPress={() => {
-              console.log('go to ThirdComponentScreen');
               this.props.navigation.navigate('ThirdComponentScreen')
             }}
           >
-            <Text>Press me</Text>
+            <Text style={styles.butText}>
+              Press me
+            </Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -38,8 +39,6 @@ export default class MySecondScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
     backgroundColor: '#2c4977',
   },
   subContainer: {
@@ -54,13 +53,15 @@ const styles = StyleSheet.create({
   },
   but: {
     marginTop: 20,
-    padding: 10,
-    fontSize: 11,
-    // backgroundColor: '#0d7774',
-    // color: '#062D2D',
-    color: 'red',
-    fontWeight: '900',
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 50,
+    paddingRight: 50,
     borderColor: '#0d7774',
-    borderWidth: 4
+    borderWidth: 2
+  },
+  butText: {
+    color: '#0d7774',
+    fontWeight: '300'
   }
 });
