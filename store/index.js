@@ -22,6 +22,4 @@ const persistor = persistStore(appStore, {
   whitelist: []
 }, () => {appStore.dispatch()});
 
-
-
 export default appStore;

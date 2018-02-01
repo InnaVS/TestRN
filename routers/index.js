@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import MyHomeScreen from '../components/MyHomeScreen';
 import MySecondScreen from '../components/MySecondScreen';
-import ThirdComponentScreen from '../components/ThirdComponentForNav';
+import ThirdComponentScreen from '../containers/ThirdComponentContainer';
 
 
 const DrawerNavigatorr = DrawerNavigator(
